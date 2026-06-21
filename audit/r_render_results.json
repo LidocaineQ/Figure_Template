@@ -1,0 +1,233 @@
+[
+  {
+    "template_id": "survival_km",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "cumulative_incidence_grouped",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "roc_auc",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "time_dependent_roc_horizon",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "calibration_curve_binary",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "pr_curve_binary",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "decision_curve_binary",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "time_to_event_decision_curve",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "time_to_event_multihorizon_calibration_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "forest_cox",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "coefficient_path_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "generalizability_subgroup_composite_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "violin_box",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "bar_stacked",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "risk_layering_monotonic_bars",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "scatter_correlation",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "embedding_umap_tsne",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "heatmap",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "confusion_matrix_heatmap_binary",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "volcano_deg",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "gsea_enrichment",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "oncoplot_mutation",
+    "returncode": 0,
+    "stdout": "null device \n          1 \n",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "genomic_alteration_consequence_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "cnv_recurrence_summary_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "waterfall",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "shap_dependence_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "shap_summary_beeswarm",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "shap_waterfall_local_explanation_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "model_complexity_audit_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "celltype_marker_dotplot_panel",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "sankey_alluvial",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "radar",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  },
+  {
+    "template_id": "baseline_table",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "log_class": "clean"
+  }
+]
