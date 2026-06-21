@@ -1,0 +1,998 @@
+{
+  "asset_id": "mas_graph_template_assets_20260620",
+  "created_from": {
+    "project1": "/Users/qihaoning/00工作/202603CTcluster",
+    "project2": "/Volumes/七号/课题补充分析和写作",
+    "reference_gallery": "/Users/qihaoning/00工作/20260620MAS_graph/ggplot2_template_gallery.pdf",
+    "med_autoscience_repo_snapshot": "/Users/qihaoning/00工作/20260521精细随访agent/repos/med-autoscience"
+  },
+  "visual_style": {
+    "palette": {
+      "primary": "#245A6B",
+      "secondary": "#8B3A3A",
+      "accent": "#D8A24A",
+      "neutral": "#13293D",
+      "muted": "#64748B",
+      "light": "#EEF4F7",
+      "soft_grid": "#E6EDF2",
+      "teal": "#2A9D8F",
+      "purple": "#6D5BD0",
+      "blue": "#2166AC",
+      "red": "#B2182B"
+    },
+    "line_width_pt": 0.9,
+    "axis_panel_width_in": 4.8,
+    "axis_panel_height_in": 4.8,
+    "axis_aspect_policy": "Non-exempt templates use a square 1:1 plotting coordinate panel; heatmap/matrix/long-bar/table/image/composite templates are explicitly exempt.",
+    "aspect_exempt_template_ids": [
+      "bar_stacked",
+      "baseline_table",
+      "celltype_marker_dotplot_panel",
+      "cnv_recurrence_summary_panel",
+      "genomic_alteration_consequence_panel",
+      "gsea_enrichment",
+      "heatmap",
+      "oncoplot_mutation",
+      "radar",
+      "risk_layering_monotonic_bars",
+      "sankey_alluvial",
+      "shap_waterfall_local_explanation_panel",
+      "waterfall"
+    ],
+    "font_policy": "ggplot2 theme_bw base_size 11; bold neutral titles; bottom legends; light major grids; no minor grids"
+  },
+  "templates": [
+    {
+      "template_id": "survival_km",
+      "title": "Kaplan-Meier survival with risk table",
+      "category": "survival_km",
+      "category_label": "Survival / Kaplan-Meier",
+      "med_autoscience_mapping": "kaplan_meier_grouped",
+      "r_code": "templates/survival_km/template.R",
+      "reference_png": "figures/reference/survival_km.png",
+      "reference_pdf": "figures/reference/survival_km.pdf",
+      "data_contract": [
+        "time",
+        "survival",
+        "group",
+        "n_risk"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "cumulative_incidence_grouped",
+      "title": "Cumulative incidence curve",
+      "category": "survival_km",
+      "category_label": "Survival / Kaplan-Meier",
+      "med_autoscience_mapping": "cumulative_incidence_grouped",
+      "r_code": "templates/cumulative_incidence_grouped/template.R",
+      "reference_png": "figures/reference/cumulative_incidence_grouped.png",
+      "reference_pdf": "figures/reference/cumulative_incidence_grouped.pdf",
+      "data_contract": [
+        "time",
+        "incidence",
+        "group"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "roc_auc",
+      "title": "ROC curve with model comparison",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "roc_curve_binary / time_dependent_roc_horizon",
+      "r_code": "templates/roc_auc/template.R",
+      "reference_png": "figures/reference/roc_auc.png",
+      "reference_pdf": "figures/reference/roc_auc.pdf",
+      "data_contract": [
+        "fpr",
+        "tpr",
+        "model",
+        "auc"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "time_dependent_roc_horizon",
+      "title": "Time-dependent ROC horizon",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "time_dependent_roc_horizon",
+      "r_code": "templates/time_dependent_roc_horizon/template.R",
+      "reference_png": "figures/reference/time_dependent_roc_horizon.png",
+      "reference_pdf": "figures/reference/time_dependent_roc_horizon.pdf",
+      "data_contract": [
+        "time",
+        "event",
+        "score",
+        "horizon",
+        "auc"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "calibration_curve_binary",
+      "title": "Calibration curve (binary outcome)",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "calibration_curve_binary",
+      "r_code": "templates/calibration_curve_binary/template.R",
+      "reference_png": "figures/reference/calibration_curve_binary.png",
+      "reference_pdf": "figures/reference/calibration_curve_binary.pdf",
+      "data_contract": [
+        "predicted",
+        "observed",
+        "lower",
+        "upper"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "pr_curve_binary",
+      "title": "Precision-recall curve",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "pr_curve_binary",
+      "r_code": "templates/pr_curve_binary/template.R",
+      "reference_png": "figures/reference/pr_curve_binary.png",
+      "reference_pdf": "figures/reference/pr_curve_binary.pdf",
+      "data_contract": [
+        "recall",
+        "precision",
+        "model"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "decision_curve_binary",
+      "title": "Decision curve (binary outcome)",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "decision_curve_binary",
+      "r_code": "templates/decision_curve_binary/template.R",
+      "reference_png": "figures/reference/decision_curve_binary.png",
+      "reference_pdf": "figures/reference/decision_curve_binary.pdf",
+      "data_contract": [
+        "threshold",
+        "net_benefit",
+        "strategy"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "time_to_event_decision_curve",
+      "title": "Decision curve (time-to-event horizon)",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "time_to_event_decision_curve",
+      "r_code": "templates/time_to_event_decision_curve/template.R",
+      "reference_png": "figures/reference/time_to_event_decision_curve.png",
+      "reference_pdf": "figures/reference/time_to_event_decision_curve.pdf",
+      "data_contract": [
+        "threshold",
+        "net_benefit",
+        "strategy",
+        "horizon"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "time_to_event_multihorizon_calibration_panel",
+      "title": "Multi-horizon calibration panel",
+      "category": "roc_auc",
+      "category_label": "ROC / AUC",
+      "med_autoscience_mapping": "time_to_event_multihorizon_calibration_panel",
+      "r_code": "templates/time_to_event_multihorizon_calibration_panel/template.R",
+      "reference_png": "figures/reference/time_to_event_multihorizon_calibration_panel.png",
+      "reference_pdf": "figures/reference/time_to_event_multihorizon_calibration_panel.pdf",
+      "data_contract": [
+        "predicted",
+        "observed",
+        "horizon"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/server_gradcam_sysu6h.py",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/export_risk_output_roi_gradcam.py"
+      ]
+    },
+    {
+      "template_id": "forest_cox",
+      "title": "Cox/effect forest plot",
+      "category": "forest_cox",
+      "category_label": "Forest / Cox model",
+      "med_autoscience_mapping": "forest_effect_main / multivariable_forest",
+      "r_code": "templates/forest_cox/template.R",
+      "reference_png": "figures/reference/forest_cox.png",
+      "reference_pdf": "figures/reference/forest_cox.pdf",
+      "data_contract": [
+        "term",
+        "estimate",
+        "lower",
+        "upper",
+        "p_value"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "coefficient_path_panel",
+      "title": "Coefficient path panel",
+      "category": "forest_cox",
+      "category_label": "Forest / Cox model",
+      "med_autoscience_mapping": "coefficient_path_panel",
+      "r_code": "templates/coefficient_path_panel/template.R",
+      "reference_png": "figures/reference/coefficient_path_panel.png",
+      "reference_pdf": "figures/reference/coefficient_path_panel.pdf",
+      "data_contract": [
+        "lambda",
+        "feature",
+        "coefficient"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "generalizability_subgroup_composite_panel",
+      "title": "Generalizability subgroup composite",
+      "category": "forest_cox",
+      "category_label": "Forest / Cox model",
+      "med_autoscience_mapping": "generalizability_subgroup_composite_panel",
+      "r_code": "templates/generalizability_subgroup_composite_panel/template.R",
+      "reference_png": "figures/reference/generalizability_subgroup_composite_panel.png",
+      "reference_pdf": "figures/reference/generalizability_subgroup_composite_panel.pdf",
+      "data_contract": [
+        "cohort",
+        "subgroup",
+        "metric",
+        "lower",
+        "upper"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "violin_box",
+      "title": "Distribution comparison violin-box",
+      "category": "violin_box",
+      "category_label": "Violin / box comparison",
+      "med_autoscience_mapping": "practical_factor_dot_figure",
+      "r_code": "templates/violin_box/template.R",
+      "reference_png": "figures/reference/violin_box.png",
+      "reference_pdf": "figures/reference/violin_box.pdf",
+      "data_contract": [
+        "group",
+        "value",
+        "cohort"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 3/f3e-geo队列hallmark.Rmd"
+      ]
+    },
+    {
+      "template_id": "bar_stacked",
+      "title": "Stacked proportion bars",
+      "category": "bar_stacked",
+      "category_label": "Bar / stacked proportion",
+      "med_autoscience_mapping": "risk_layering_monotonic_bars",
+      "r_code": "templates/bar_stacked/template.R",
+      "reference_png": "figures/reference/bar_stacked.png",
+      "reference_pdf": "figures/reference/bar_stacked.pdf",
+      "data_contract": [
+        "cohort",
+        "class",
+        "n",
+        "fraction"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "risk_layering_monotonic_bars",
+      "title": "Monotonic risk layering bars",
+      "category": "bar_stacked",
+      "category_label": "Bar / stacked proportion",
+      "med_autoscience_mapping": "risk_layering_monotonic_bars",
+      "r_code": "templates/risk_layering_monotonic_bars/template.R",
+      "reference_png": "figures/reference/risk_layering_monotonic_bars.png",
+      "reference_pdf": "figures/reference/risk_layering_monotonic_bars.pdf",
+      "data_contract": [
+        "risk_layer",
+        "event_rate",
+        "lower",
+        "upper"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "scatter_correlation",
+      "title": "Scatter correlation panel",
+      "category": "scatter_correlation",
+      "category_label": "Scatter / correlation",
+      "med_autoscience_mapping": "feature_response_support_domain_panel",
+      "r_code": "templates/scatter_correlation/template.R",
+      "reference_png": "figures/reference/scatter_correlation.png",
+      "reference_pdf": "figures/reference/scatter_correlation.pdf",
+      "data_contract": [
+        "x",
+        "y",
+        "group"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/f2fgh-多因素分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "embedding_umap_tsne",
+      "title": "Embedding scatter",
+      "category": "embedding_umap_tsne",
+      "category_label": "UMAP / t-SNE embedding",
+      "med_autoscience_mapping": "umap_scatter_grouped / tsne_scatter_grouped / pca_scatter_grouped",
+      "r_code": "templates/embedding_umap_tsne/template.R",
+      "reference_png": "figures/reference/embedding_umap_tsne.png",
+      "reference_pdf": "figures/reference/embedding_umap_tsne.pdf",
+      "data_contract": [
+        "dim1",
+        "dim2",
+        "cell_type",
+        "cohort"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/02 单细胞相关/gse178341/gse178341.Rmd",
+        "/Volumes/七号/课题补充分析和写作/02 单细胞相关/旧文件/data_analysis.R",
+        "/Volumes/七号/课题补充分析和写作/02 单细胞相关/旧文件/gsea_irGSEA.R",
+        "/Users/qihaoning/00工作/202603CTcluster/joint_binary_bundle_v1/snapshots/manuscript_figures_joint_binary_nature_v2/src_py/render_figure1_v2.R",
+        "/Volumes/七号/课题补充分析和写作/02 单细胞相关/GSE132465/gse132465.Rmd"
+      ]
+    },
+    {
+      "template_id": "heatmap",
+      "title": "ComplexHeatmap annotated matrix",
+      "category": "heatmap",
+      "category_label": "Heatmap / matrix pattern",
+      "med_autoscience_mapping": "heatmap_group_comparison / clustered_heatmap",
+      "r_code": "templates/heatmap/template.R",
+      "reference_png": "figures/reference/heatmap.png",
+      "reference_pdf": "figures/reference/heatmap.pdf",
+      "data_contract": [
+        "matrix",
+        "row_annotation",
+        "column_annotation",
+        "value"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_features_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure2_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 3/f3c-聚类热图.Rmd"
+      ]
+    },
+    {
+      "template_id": "confusion_matrix_heatmap_binary",
+      "title": "Binary confusion matrix heatmap",
+      "category": "heatmap",
+      "category_label": "Heatmap / matrix pattern",
+      "med_autoscience_mapping": "confusion_matrix_heatmap_binary",
+      "r_code": "templates/confusion_matrix_heatmap_binary/template.R",
+      "reference_png": "figures/reference/confusion_matrix_heatmap_binary.png",
+      "reference_pdf": "figures/reference/confusion_matrix_heatmap_binary.pdf",
+      "data_contract": [
+        "truth",
+        "predicted",
+        "n"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_features_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure2_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 3/f3c-聚类热图.Rmd"
+      ]
+    },
+    {
+      "template_id": "volcano_deg",
+      "title": "Differential-expression volcano",
+      "category": "volcano_deg",
+      "category_label": "Volcano / differential expression",
+      "med_autoscience_mapping": "omics_volcano_panel",
+      "r_code": "templates/volcano_deg/template.R",
+      "reference_png": "figures/reference/volcano_deg.png",
+      "reference_pdf": "figures/reference/volcano_deg.pdf",
+      "data_contract": [
+        "feature",
+        "log2_fc",
+        "neg_log10_p",
+        "status"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 6/f6a-gsea.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/stage_figure4_biology_v2.py",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure1_v2.R"
+      ]
+    },
+    {
+      "template_id": "gsea_enrichment",
+      "title": "Pathway enrichment dotplot",
+      "category": "gsea_enrichment",
+      "category_label": "GSEA / enrichment",
+      "med_autoscience_mapping": "pathway_enrichment_dotplot_panel / gsva_ssgsea_heatmap",
+      "r_code": "templates/gsea_enrichment/template.R",
+      "reference_png": "figures/reference/gsea_enrichment.png",
+      "reference_pdf": "figures/reference/gsea_enrichment.pdf",
+      "data_contract": [
+        "pathway",
+        "gene_ratio",
+        "nes",
+        "fdr"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 6/f6a-gsea.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 3/f3e-geo队列hallmark.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/stage_figure4_biology_v2.py"
+      ]
+    },
+    {
+      "template_id": "oncoplot_mutation",
+      "title": "Mutation landscape oncoplot",
+      "category": "oncoplot_mutation",
+      "category_label": "Oncoplot / mutation landscape",
+      "med_autoscience_mapping": "oncoplot_mutation_landscape_panel / genomic_alteration_landscape_panel",
+      "r_code": "templates/oncoplot_mutation/template.R",
+      "reference_png": "figures/reference/oncoplot_mutation.png",
+      "reference_pdf": "figures/reference/oncoplot_mutation.pdf",
+      "data_contract": [
+        "maf",
+        "clinical_annotation",
+        "gene",
+        "sample"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R"
+      ]
+    },
+    {
+      "template_id": "genomic_alteration_consequence_panel",
+      "title": "Genomic alteration consequence",
+      "category": "oncoplot_mutation",
+      "category_label": "Oncoplot / mutation landscape",
+      "med_autoscience_mapping": "genomic_alteration_consequence_panel",
+      "r_code": "templates/genomic_alteration_consequence_panel/template.R",
+      "reference_png": "figures/reference/genomic_alteration_consequence_panel.png",
+      "reference_pdf": "figures/reference/genomic_alteration_consequence_panel.pdf",
+      "data_contract": [
+        "alteration",
+        "estimate",
+        "lower",
+        "upper",
+        "q_value"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R"
+      ]
+    },
+    {
+      "template_id": "cnv_recurrence_summary_panel",
+      "title": "CNV recurrence summary",
+      "category": "oncoplot_mutation",
+      "category_label": "Oncoplot / mutation landscape",
+      "med_autoscience_mapping": "cnv_recurrence_summary_panel",
+      "r_code": "templates/cnv_recurrence_summary_panel/template.R",
+      "reference_png": "figures/reference/cnv_recurrence_summary_panel.png",
+      "reference_pdf": "figures/reference/cnv_recurrence_summary_panel.pdf",
+      "data_contract": [
+        "chromosome",
+        "event",
+        "frequency"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Binary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig1_KM_Multicox_Ternary/s.f1-分层分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R"
+      ]
+    },
+    {
+      "template_id": "waterfall",
+      "title": "Ranked risk-score waterfall",
+      "category": "waterfall",
+      "category_label": "Waterfall / ranked risk score",
+      "med_autoscience_mapping": "risk_layering_monotonic_bars",
+      "r_code": "templates/waterfall/template.R",
+      "reference_png": "figures/reference/waterfall.png",
+      "reference_pdf": "figures/reference/waterfall.pdf",
+      "data_contract": [
+        "sample",
+        "score",
+        "response"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/ct_cluster_ref/downstream/code/7_mutation_analysis.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_v2.R"
+      ]
+    },
+    {
+      "template_id": "shap_dependence_panel",
+      "title": "SHAP dependence panel",
+      "category": "scatter_correlation",
+      "category_label": "Scatter / correlation",
+      "med_autoscience_mapping": "shap_dependence_panel",
+      "r_code": "templates/shap_dependence_panel/template.R",
+      "reference_png": "figures/reference/shap_dependence_panel.png",
+      "reference_pdf": "figures/reference/shap_dependence_panel.pdf",
+      "data_contract": [
+        "feature_value",
+        "shap_value",
+        "subgroup"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/f2fgh-多因素分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "shap_summary_beeswarm",
+      "title": "SHAP summary beeswarm",
+      "category": "scatter_correlation",
+      "category_label": "Scatter / correlation",
+      "med_autoscience_mapping": "shap_summary_beeswarm",
+      "r_code": "templates/shap_summary_beeswarm/template.R",
+      "reference_png": "figures/reference/shap_summary_beeswarm.png",
+      "reference_pdf": "figures/reference/shap_summary_beeswarm.pdf",
+      "data_contract": [
+        "feature",
+        "shap_value",
+        "feature_value"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/f2fgh-多因素分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "shap_waterfall_local_explanation_panel",
+      "title": "SHAP waterfall local explanation",
+      "category": "waterfall",
+      "category_label": "Waterfall / ranked risk score",
+      "med_autoscience_mapping": "shap_waterfall_local_explanation_panel",
+      "r_code": "templates/shap_waterfall_local_explanation_panel/template.R",
+      "reference_png": "figures/reference/shap_waterfall_local_explanation_panel.png",
+      "reference_pdf": "figures/reference/shap_waterfall_local_explanation_panel.pdf",
+      "data_contract": [
+        "feature",
+        "contribution",
+        "baseline",
+        "prediction"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/ct_cluster_ref/downstream/code/7_mutation_analysis.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_v2.R"
+      ]
+    },
+    {
+      "template_id": "model_complexity_audit_panel",
+      "title": "Model complexity audit",
+      "category": "scatter_correlation",
+      "category_label": "Scatter / correlation",
+      "med_autoscience_mapping": "model_complexity_audit_panel",
+      "r_code": "templates/model_complexity_audit_panel/template.R",
+      "reference_png": "figures/reference/model_complexity_audit_panel.png",
+      "reference_pdf": "figures/reference/model_complexity_audit_panel.pdf",
+      "data_contract": [
+        "model",
+        "feature_count",
+        "metric",
+        "validation"
+      ],
+      "axis_aspect_policy": "square_axis_panel",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 1/f2fgh-多因素分析.Rmd"
+      ]
+    },
+    {
+      "template_id": "celltype_marker_dotplot_panel",
+      "title": "Cell-type marker dotplot",
+      "category": "heatmap",
+      "category_label": "Heatmap / matrix pattern",
+      "med_autoscience_mapping": "celltype_marker_dotplot_panel",
+      "r_code": "templates/celltype_marker_dotplot_panel/template.R",
+      "reference_png": "figures/reference/celltype_marker_dotplot_panel.png",
+      "reference_pdf": "figures/reference/celltype_marker_dotplot_panel.pdf",
+      "data_contract": [
+        "cell_type",
+        "marker",
+        "pct_expression",
+        "avg_expression"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_features_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure2_v2.R",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 3/f3c-聚类热图.Rmd"
+      ]
+    },
+    {
+      "template_id": "sankey_alluvial",
+      "title": "Subtype transition alluvial",
+      "category": "sankey_alluvial",
+      "category_label": "Sankey / alluvial flow",
+      "med_autoscience_mapping": "atlas_spatial_trajectory_storyboard_panel",
+      "r_code": "templates/sankey_alluvial/template.R",
+      "reference_png": "figures/reference/sankey_alluvial.png",
+      "reference_pdf": "figures/reference/sankey_alluvial.pdf",
+      "data_contract": [
+        "left_group",
+        "right_group",
+        "n"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure4_biology_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/render_figure3_v2.R",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/stage_figure4_biology_v2.py",
+        "/Users/qihaoning/00工作/202603CTcluster/official_mainline_clean_v1/code/omics_pipeline/joint_binary_manuscript_figures_v2/stage_figure3_v2.py",
+        "/Users/qihaoning/00工作/202603CTcluster/ct_cluster_ref/downstream/code/2_sankey_cms.R"
+      ]
+    },
+    {
+      "template_id": "radar",
+      "title": "Radial immune/pathology profile",
+      "category": "radar",
+      "category_label": "Radar / radial profile",
+      "med_autoscience_mapping": "practical_factor_dot_figure",
+      "r_code": "templates/radar/template.R",
+      "reference_png": "figures/reference/radar.png",
+      "reference_pdf": "figures/reference/radar.pdf",
+      "data_contract": [
+        "group",
+        "axis_scores"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 6/f6c-HE细胞计数雷达图.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/03出图_Rmd_code/Figure 6/f6c-HE细胞计数雷达图.Rmd"
+      ]
+    },
+    {
+      "template_id": "baseline_table",
+      "title": "Baseline summary table",
+      "category": "baseline_table",
+      "category_label": "Baseline / summary table",
+      "med_autoscience_mapping": "table1_baseline_characteristics",
+      "r_code": "templates/baseline_table/template.R",
+      "reference_png": "figures/reference/baseline_table.png",
+      "reference_pdf": "figures/reference/baseline_table.pdf",
+      "data_contract": [
+        "variable",
+        "level",
+        "overall",
+        "group_a",
+        "group_b",
+        "p_value"
+      ],
+      "axis_aspect_policy": "free_long_or_composite",
+      "representative_sources": [
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 7/f7-免疫治疗队列分析.Rmd",
+        "/Users/qihaoning/00工作/202603CTcluster/code_ref/current_article_templates/Main_Fig5_TIDE_IPS/f7-免疫治疗队列分析.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 4/f4ghi-生存曲线.Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 5/f5c-生存分析(贝伐使用os).Rmd",
+        "/Volumes/七号/课题补充分析和写作/03出图/Figure 3/f3a-tcga突变图谱图.Rmd"
+      ]
+    }
+  ],
+  "source_inventory": {
+    "csv": "audit/source_inventory.csv",
+    "json": "audit/source_inventory.json",
+    "category_summary": "audit/category_summary.md"
+  },
+  "image_inventory": {
+    "csv": "audit/image_inventory.csv",
+    "json": "audit/image_inventory.json",
+    "summary": "audit/image_summary.md"
+  },
+  "reference_gallery_coverage": [
+    {
+      "reference_template_id": "calibration_curve_binary",
+      "coverage_status": "direct",
+      "template_id": "calibration_curve_binary"
+    },
+    {
+      "reference_template_id": "pr_curve_binary",
+      "coverage_status": "direct",
+      "template_id": "pr_curve_binary"
+    },
+    {
+      "reference_template_id": "roc_curve_binary",
+      "coverage_status": "alias",
+      "template_id": "roc_auc"
+    },
+    {
+      "reference_template_id": "decision_curve_binary",
+      "coverage_status": "direct",
+      "template_id": "decision_curve_binary"
+    },
+    {
+      "reference_template_id": "time_to_event_decision_curve",
+      "coverage_status": "direct",
+      "template_id": "time_to_event_decision_curve"
+    },
+    {
+      "reference_template_id": "cumulative_incidence_grouped",
+      "coverage_status": "direct",
+      "template_id": "cumulative_incidence_grouped"
+    },
+    {
+      "reference_template_id": "kaplan_meier_grouped",
+      "coverage_status": "alias",
+      "template_id": "survival_km"
+    },
+    {
+      "reference_template_id": "risk_layering_monotonic_bars",
+      "coverage_status": "direct",
+      "template_id": "risk_layering_monotonic_bars"
+    },
+    {
+      "reference_template_id": "time_dependent_roc_horizon",
+      "coverage_status": "direct",
+      "template_id": "time_dependent_roc_horizon"
+    },
+    {
+      "reference_template_id": "time_to_event_multihorizon_calibration_panel",
+      "coverage_status": "direct",
+      "template_id": "time_to_event_multihorizon_calibration_panel"
+    },
+    {
+      "reference_template_id": "coefficient_path_panel",
+      "coverage_status": "direct",
+      "template_id": "coefficient_path_panel"
+    },
+    {
+      "reference_template_id": "forest_effect_main",
+      "coverage_status": "alias",
+      "template_id": "forest_cox"
+    },
+    {
+      "reference_template_id": "generalizability_subgroup_composite_panel",
+      "coverage_status": "direct",
+      "template_id": "generalizability_subgroup_composite_panel"
+    },
+    {
+      "reference_template_id": "pca_scatter_grouped",
+      "coverage_status": "alias",
+      "template_id": "embedding_umap_tsne"
+    },
+    {
+      "reference_template_id": "tsne_scatter_grouped",
+      "coverage_status": "alias",
+      "template_id": "embedding_umap_tsne"
+    },
+    {
+      "reference_template_id": "umap_scatter_grouped",
+      "coverage_status": "alias",
+      "template_id": "embedding_umap_tsne"
+    },
+    {
+      "reference_template_id": "confusion_matrix_heatmap_binary",
+      "coverage_status": "direct",
+      "template_id": "confusion_matrix_heatmap_binary"
+    },
+    {
+      "reference_template_id": "heatmap_group_comparison",
+      "coverage_status": "alias",
+      "template_id": "heatmap"
+    },
+    {
+      "reference_template_id": "shap_dependence_panel",
+      "coverage_status": "direct",
+      "template_id": "shap_dependence_panel"
+    },
+    {
+      "reference_template_id": "shap_summary_beeswarm",
+      "coverage_status": "direct",
+      "template_id": "shap_summary_beeswarm"
+    },
+    {
+      "reference_template_id": "shap_waterfall_local_explanation_panel",
+      "coverage_status": "direct",
+      "template_id": "shap_waterfall_local_explanation_panel"
+    },
+    {
+      "reference_template_id": "model_complexity_audit_panel",
+      "coverage_status": "direct",
+      "template_id": "model_complexity_audit_panel"
+    },
+    {
+      "reference_template_id": "celltype_marker_dotplot_panel",
+      "coverage_status": "direct",
+      "template_id": "celltype_marker_dotplot_panel"
+    },
+    {
+      "reference_template_id": "cnv_recurrence_summary_panel",
+      "coverage_status": "direct",
+      "template_id": "cnv_recurrence_summary_panel"
+    },
+    {
+      "reference_template_id": "genomic_alteration_consequence_panel",
+      "coverage_status": "direct",
+      "template_id": "genomic_alteration_consequence_panel"
+    },
+    {
+      "reference_template_id": "genomic_alteration_landscape_panel",
+      "coverage_status": "alias",
+      "template_id": "oncoplot_mutation"
+    },
+    {
+      "reference_template_id": "omics_volcano_panel",
+      "coverage_status": "alias",
+      "template_id": "volcano_deg"
+    },
+    {
+      "reference_template_id": "pathway_enrichment_dotplot_panel",
+      "coverage_status": "alias",
+      "template_id": "gsea_enrichment"
+    },
+    {
+      "reference_template_id": "graphical_abstract",
+      "coverage_status": "retired_by_curator",
+      "template_id": ""
+    },
+    {
+      "reference_template_id": "consort_trial_flow",
+      "coverage_status": "retired_by_curator",
+      "template_id": ""
+    },
+    {
+      "reference_template_id": "study_timeline",
+      "coverage_status": "retired_by_curator",
+      "template_id": ""
+    },
+    {
+      "reference_template_id": "distribution_comparison",
+      "coverage_status": "alias",
+      "template_id": "violin_box"
+    }
+  ]
+}
